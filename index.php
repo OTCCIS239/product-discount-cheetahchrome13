@@ -1,4 +1,11 @@
-<!doctype html>
+<?php
+    $products = [
+        "screwdriver",
+        "clapton coil"  
+    ];
+?>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
 <!--Student dev: Justin Mangan
@@ -25,7 +32,12 @@
                             <form action="display_discount.php" method="post">
                                 <div class="form-group">
                                     <label for="description">Product Description</label>
-                                    <input type="text" class="form-control" name="product_description">
+                                    <!--<input type="text" class="form-control" name="product_description">-->
+                                    <select name="description" class="form-control">
+                                     <?php foreach($products as $product): ?>
+                                        <option value="<?= $product ?>"><?= $product ?></option>
+                                     <?php endforeach; ?>
+                                     </select>
                                 </div>
         
                                 <div class="form-group">
